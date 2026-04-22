@@ -28,6 +28,8 @@ ZAJEL/
 │── registration.html
 │── style.css
 │── script.js
+│── /package-lock.json
+│── /package.json
 │── /img
 
 🔍 Demo
