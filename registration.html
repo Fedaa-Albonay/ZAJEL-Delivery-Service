@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaje; - Join Us</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="reg-body">
+    <div class="reg-container">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn-active"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="register()">Sign Up</button>
+            </div>
+
+            <form id="login-form" class="input-group">
+                <input type="email" id="login-email" class="input-field" placeholder="Email Address" required>
+                <input type="password" id="login-pass" class="input-field" placeholder="Enter Password" required>
+                <button type="submit" class="submit-btn">Log In</button>
+            </form>
+
+            <form id="register-form" class="input-group">
+                <input type="text" id="reg-name" class="input-field" placeholder="Full Name" required>
+                <input type="email" id="reg-email" class="input-field" placeholder="Email Address" required>
+                <input type="password" id="reg-pass" class="input-field" placeholder="Create Password" required>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+</html>

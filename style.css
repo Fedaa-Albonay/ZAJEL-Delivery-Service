@@ -1,0 +1,707 @@
+/* 1. GLOBAL STYLES & VARIABLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #e63946;    /* Zajel Red */
+    --dark-blue: #1d3557;      /* Trust Blue */
+    --light-bg: #f1faee;       /* Soft Background */
+    --accent-color: #a8dadc;   /* Accent Blue */
+    --white: #ffffff;
+    --text-color: #333;
+    --grey-text: #666;
+}
+
+/* Typography Consistency */
+h2 {
+    font-size: 2.5rem;
+    color: var(--dark-blue);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: var(--grey-text);
+    line-height: 1.8;
+}
+
+section {
+    padding: 80px 10%;
+}
+
+/* 2. HEADER & NAVIGATION  */
+header {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+}
+
+.navigation ul li {
+    margin: 0 15px;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navigation ul li a:hover {
+    color: var(--primary-color);
+}
+
+.registration-box a {
+    text-decoration: none;
+    color: var(--white);
+    margin-left: 15px;
+    padding: 8px 15px;
+    border: 1px solid var(--white);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.registration-box a:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* DARK MODE STYLES */
+body.dark-theme {
+    --light-bg: #1b263b;    
+    --white: #0d1b2a;       
+    --text-color: #e0e1dd;
+    --grey-text: #a8dadc;
+    background-color: var(--white);
+    color: var(--text-color);
+}
+
+body.dark-theme h2, 
+body.dark-theme h3,
+body.dark-theme label {
+    color: var(--accent-color);
+}
+
+body.dark-theme .card, 
+body.dark-theme .car-card,
+body.dark-theme form {
+    background-color: #1b263b;
+    border-color: #415a77;
+    color: white;
+}
+
+/* 3. HOME (HERO) SECTION */
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 8%;
+    background-color: var(--light-bg);
+    min-height: 85vh;
+    gap: 40px;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.social-media {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.social-media a {
+    font-size: 1.4rem;
+    color: var(--dark-blue);
+    transition: 0.3s;
+}
+
+.social-media a:hover {
+    color: var(--primary-color);
+}
+
+#home img {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.home-content {
+    flex: 1.2;
+    text-align: center;
+}
+
+#home h2 {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+#home h2::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 5px;
+    background: var(--primary-color);
+    margin: 15px auto;
+}
+
+#home p {
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    color: var(--grey-text);
+}
+
+.home-btns {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--dark-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+/* 4. SERVICES SECTION */
+#service > p {
+    text-align: center;
+    max-width: 700px;
+    margin: -20px auto 40px;
+}
+
+.cards-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.cards-container:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% { 
+        transform: translateX(0); 
+    }
+    100% { 
+        transform: translateX(-1600px); 
+    }
+}
+
+#service {
+    overflow: hidden;
+    padding: 80px 0;
+}
+
+.card {
+    flex: 0 0 300px;
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-snap-align: center;
+    border-bottom: 4px solid var(--accent-color);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-bottom-color: var(--primary-color);
+}
+
+.card img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    backface-visibility: hidden; 
+    transform: translateZ(0); 
+    -webkit-font-smoothing: subpixel-antialiased;
+    will-change: transform;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: var(--dark-blue);
+}
+
+/* 5. ABOUT US SECTION */
+#about-us {
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    gap: 50px;
+}
+
+.about-content {
+    flex: 1;
+}
+
+#about-us h2 {
+    text-align: left;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+#about-us h2::after {
+    margin: 10px 0;
+    width: 40px;
+}
+
+#about-us h3 {
+    color: var(--dark-blue);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0 var(--accent-color);
+    transition: 0.4s;
+}
+
+.about-image img:hover {
+    transform: translate(10px, 10px);
+    box-shadow: 0 0 0 transparent;
+}
+
+/* 6. VEHICLES SECTION */
+#vehicles {
+    background-color: var(--light-bg);
+    text-align: center;
+}
+
+.vehicles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.car-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    transition: 0.3s;
+    border: 1px solid #eee;
+}
+
+.car-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.car-card img {
+    width: 100%;
+    max-width: 150px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+/* 7. TRACKING SECTION */
+#tracking-your-order {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    border-radius: 20px;
+    margin: 40px 10%;
+    padding: 60px 5%;
+}
+
+#tracking-your-order h2 {
+    color: var(--white);
+}
+
+#tracking-your-order form {
+    display: flex;
+    background: var(--white);
+    padding: 5px;
+    border-radius: 50px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#track {
+    flex: 1;
+    border: none;
+    padding: 15px 25px;
+    outline: none;
+    border-radius: 50px;
+}
+
+.btn-track {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#tracking-result {
+    display: none;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* 8. CONTACT US SECTION */
+#contact-us {
+    display: flex;
+    gap: 50px;
+    background-color: var(--white);
+    flex-wrap: wrap;
+}
+
+#contact-us form {
+    flex: 2;
+    background: var(--light-bg);
+    padding: 40px;
+    border-radius: 20px;
+    min-width: 300px;
+}
+
+.client-info .info {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.info input, .info textarea {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+}
+
+.sub input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.sub input[type="submit"]:hover {
+    background-color: var(--primary-color);
+}
+
+.our-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.our-email, .our-phone {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: var(--white);
+    margin-bottom: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.our-info i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.our-info a {
+    text-decoration: none;
+    color: var(--dark-blue);
+    font-weight: 500;
+}
+
+.success-card {
+    background-color: var(--light-bg);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px dashed var(--accent-color);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.iti {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.iti__country-list {
+    color: var(--dark-blue);
+    text-align: left;
+}
+
+/* 9. FAQ & FOOTER */
+#faq {
+    background-color: var(--light-bg);
+}
+
+details {
+    background: var(--white);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+summary {
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+footer {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 60px 10% 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-column h2 {
+    color: var(--white);
+}
+
+.footer-column { 
+    flex: 1; 
+    min-width: 200px; 
+}
+
+.footer-column h3 { 
+    color: var(--primary-color); 
+    margin-bottom: 20px; 
+}
+
+.footer-column ul { 
+    list-style: none; 
+}
+
+.footer-column ul li { 
+    margin-bottom: 10px; 
+}
+
+.footer-column a { 
+    color: #ccc;
+    text-decoration: none; 
+    transition: 0.3s; 
+}
+
+.footer-column a:hover { 
+    color: var(--white); 
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-bottom a { 
+    color: var(--primary-color); 
+    text-decoration: none; 
+}
+
+/* 10. REGISTRATION & LOGIN PAGE (The Missing Part) */
+.reg-body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(29, 53, 87, 0.7), rgba(29, 53, 87, 0.7)), url('./img/background.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reg-container {
+    width: 400px;
+    background: var(--white);
+    padding: 40px 30px; 
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+    min-height: 480px; 
+}
+
+.form-box {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.button-box {
+    width: 230px;
+    margin: 0 auto 35px; 
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 30px;
+    display: flex;
+    background: #f8f9fa; 
+}
+
+.toggle-btn {
+    padding: 12px 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    font-weight: bold;
+    flex: 1;
+    z-index: 2;
+    transition: 0.3s;
+}
+
+#btn-active {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 115px; 
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 30px;
+    transition: .5s;
+    z-index: 1;
+}
+
+.input-group {
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    left: 0;
+    right: 0;
+    padding: 0 30px;
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#login-form {
+    left: 0;
+}
+
+#register-form {
+    left: 450px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 14px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--dark-blue);
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
