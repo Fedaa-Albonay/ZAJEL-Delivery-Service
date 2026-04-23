@@ -705,3 +705,125 @@ footer {
     cursor: pointer;
     margin-top: 10px;
 }
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* 1. TABLETS & MEDIUM SCREENS (max-width: 992px) */
+@media (max-width: 992px) {
+    section {
+        padding: 60px 5%;
+    }
+
+    #home {
+        flex-direction: column-reverse; /* Stack image on top of text */
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .image-container {
+        justify-content: center;
+    }
+
+    #home h2 {
+        font-size: 2.5rem;
+    }
+
+    #about-us {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about-us h2 {
+        text-align: center;
+    }
+
+    .about-image img {
+        box-shadow: 10px 10px 0 var(--accent-color); /* Reduce shadow size for smaller screens */
+    }
+}
+
+/* 2. MOBILE DEVICES (max-width: 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navigation ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navigation ul li {
+        margin: 5px 10px;
+    }
+
+    .registration-box {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    .home-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%; /* Full width buttons on mobile */
+        max-width: 300px;
+    }
+
+    #tracking-your-order form {
+        flex-direction: column;
+        border-radius: 20px;
+        background: transparent;
+    }
+
+    #track {
+        margin-bottom: 10px;
+        background: var(--white);
+        border-radius: 10px;
+        width: 100%;
+    }
+
+    .btn-track {
+        border-radius: 10px;
+        width: 100%;
+    }
+
+    /* Registration Page Adjustments */
+    .reg-container {
+        width: 95%;
+        margin: 20px;
+        min-height: auto;
+    }
+
+    .form-box {
+        height: auto;
+        padding-bottom: 30px;
+    }
+}
+
+/* 3. SMALL MOBILE DEVICES (max-width: 480px) */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .card {
+        flex: 0 0 280px; /* Adjust service card width */
+    }
+    
+    #contact-us form {
+        padding: 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
